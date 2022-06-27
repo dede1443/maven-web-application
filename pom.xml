@@ -97,13 +97,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url> http://172.31.18.29:8081/repository/ebay-bts-releases/</url>
+	      <url> http://172.31.7.224:8081/repository/BOA_mobile_app_release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://3.98.96.86:8081/repository/BOA_mobile_app_snapshot/</url>
+	      <url>http://172.31.7.224:8081/repository/BOA_mobile_app_snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
