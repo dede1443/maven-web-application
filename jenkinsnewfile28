@@ -1,0 +1,38 @@
+node
+{
+    
+    stage('1 clone')
+    {
+     //git 'https://github.com/dede1443/maven-web-application'   
+    // sh "git clone https://github.com/dede1443/maven-web-application"
+    git branch: 'dev', credentialsId: 'Github', url: 'https://github.com/dede1443/maven-web-application'
+    }
+    
+    def MHD = tool name: 'maven3.8.6'
+    
+    stage('2 package')
+    {
+        sh "${MHD}/bin/mvn clean package"
+    }
+    
+    stage('3 code quality')
+    {
+      sh  "${MHD}/bin/mvn sonar:sonar"
+    }
+    
+    stage('4 uploadartifacts')
+    {
+        sh "${MHD}/bin/mvn deploy"
+    }
+  /*  stage('5 approval')
+    {
+        timeout(5) {
+    input message: "Please review and approve deployment"
+}
+    }*/
+    stage ('6 uat deployment')
+{
+    deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://172.31.11.165:8080')], contextPath: null, war: 'target/*war'
+}
+    
+}
