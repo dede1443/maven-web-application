@@ -28,6 +28,15 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 	</properties>
+	
+	<repositories>
+	<repository>
+	      <id>nexus</id>
+	      <name> Nexus Remote Repository</name>
+	      <url>http://172.31.7.224:8081/repository/BOA_mobile_app_group/</url>
+	    </repository>
+	</repositories>
+		
 
 	<dependencies>
 		
