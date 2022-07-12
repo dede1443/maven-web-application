@@ -1,0 +1,40 @@
+node {
+    
+    timestamps {
+    def maven = tool name: 'maven3.8.6'
+    stage ('cloning'){
+        
+        git branch: 'dev', credentialsId: 'Github2', url: 'https://github.com/dede1443/maven-web-application'
+            }
+            
+    stage ('test + build'){
+         sh " ${maven}/bin/mvn  install"
+            }
+    
+    stage ('code quality analysis'){
+         sh " ${maven}/bin/mvn  sonar:sonar"
+            }
+
+    stage ('upload artifacts'){
+         sh " ${maven}/bin/mvn  deploy"
+            }
+            
+            stage ('approval'){
+       timeout(activity: true, time: 5) {
+           input message : 'Lomi plase wake up, review and approve this'
+           
+            }
+    
+}
+
+            stage ('uat deployment'){
+         
+         deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://172.31.11.165:8080/')], contextPath: null, war: 'target/*war'
+         
+            }
+
+
+        
+    }
+
+}
