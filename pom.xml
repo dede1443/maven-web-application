@@ -113,7 +113,7 @@
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://172.31.11.127:4000/content/repositories/1</url>
+	      <url>http://3.98.142.67:4000/content/repositories/docker_snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
@@ -124,7 +124,7 @@
 		
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
+				<groupId>org.apache.maven.plugins</groupIdhttp://3.98.142.67:4000/content/repositories/docker_snapshot/>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.3</version>
 				<configuration>
