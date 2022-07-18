@@ -113,7 +113,7 @@
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://172.31.3.164:4000/content/repositories/docker_snapshot/</url>
+	      <url>http://172.31.11.127:4000/content/repositories/1/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
