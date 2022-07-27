@@ -114,7 +114,7 @@
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://172.31.11.127:5000/content/repositories/1/</url>
+	      <url>http://172.31.11.127:5000/content/repositories/mwa/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
